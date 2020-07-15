@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FunctionComponent, useState } from "react";
+import { Switch, Route, BrowserRouter as Router, Link } from "react-router-dom";
+import {
+  AppBar,
+  createMuiTheme,
+  ThemeProvider,
+  Toolbar,
+  Typography,
+  Button,
+} from "@material-ui/core";
+import { IntlProvider } from "react-intl";
+import { Background } from "./Background";
 
-function App() {
+const theme = createMuiTheme({});
+
+export const App: FunctionComponent = () => {
+  const [locale] = useState(navigator.language);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <IntlProvider locale={locale}>
+      <ThemeProvider theme={theme}>
+        <Router>
+          <Background />
+          <AppBar position="static">
+            <Toolbar>
+              <Button variant="outlined" component={Link} to="/">
+                <Typography variant="h5">Tomas Pilar</Typography>
+              </Button>
+            </Toolbar>
+          </AppBar>
+          <Switch>
+            <Route path="/">Home</Route>
+          </Switch>
+        </Router>
+      </ThemeProvider>
+    </IntlProvider>
   );
-}
+};
 
 export default App;
