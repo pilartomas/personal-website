@@ -1,17 +1,24 @@
 import React, { FunctionComponent, useState } from "react";
-import { Switch, Route, BrowserRouter as Router, Link } from "react-router-dom";
-import {
-  AppBar,
-  createMuiTheme,
-  ThemeProvider,
-  Toolbar,
-  Typography,
-  Button,
-} from "@material-ui/core";
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import { createMuiTheme, ThemeProvider, CssBaseline } from "@material-ui/core";
 import { IntlProvider } from "react-intl";
-import { Background } from "./Background";
 
-const theme = createMuiTheme({});
+import { HomePage } from "./HomePage";
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#53b5ce",
+    },
+    secondary: {
+      main: "#fe9c00",
+    },
+    background: {
+      default: "#000000",
+      paper: "#000000",
+    },
+  },
+});
 
 export const App: FunctionComponent = () => {
   const [locale] = useState(navigator.language);
@@ -19,17 +26,12 @@ export const App: FunctionComponent = () => {
   return (
     <IntlProvider locale={locale}>
       <ThemeProvider theme={theme}>
+        <CssBaseline />
         <Router>
-          <Background />
-          <AppBar position="static">
-            <Toolbar>
-              <Button variant="outlined" component={Link} to="/">
-                <Typography variant="h5">Tomas Pilar</Typography>
-              </Button>
-            </Toolbar>
-          </AppBar>
           <Switch>
-            <Route path="/">Home</Route>
+            <Route path="/">
+              <HomePage />
+            </Route>
           </Switch>
         </Router>
       </ThemeProvider>
