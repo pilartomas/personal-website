@@ -4,6 +4,7 @@ import { createMuiTheme, ThemeProvider, CssBaseline } from "@material-ui/core";
 import { IntlProvider } from "react-intl";
 
 import { HomePage } from "./HomePage";
+import { Background } from "./Background";
 
 const theme = createMuiTheme({
   palette: {
@@ -27,6 +28,7 @@ export const App: FunctionComponent = () => {
     <IntlProvider locale={locale}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        <Background />
         <Router>
           <Switch>
             <Route path="/">
