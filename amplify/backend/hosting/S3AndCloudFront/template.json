@@ -121,8 +121,10 @@
           "Aliases": { "Ref": "cnames" },
           "ViewerCertificate": {
             "AcmCertificateArn": { "Ref": "certificate" },
-            "SslSupportMethod": "sni-only"
+            "SslSupportMethod": "sni-only",
+            "MinimumProtocolVersion": "TLSv1.2_2019"
           },
+          "HttpVersion": "http2",
           "Origins": [
             {
               "DomainName": {
