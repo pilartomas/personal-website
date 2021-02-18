@@ -7,7 +7,7 @@ import {
   Grid,
   Container,
 } from "@material-ui/core";
-import { GitHub, LinkedIn, Email } from "@material-ui/icons";
+import { GitHub, LinkedIn, Email, Lock } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -57,7 +57,7 @@ export const HomePage: FunctionComponent = () => {
             </Link>
           </Grid>
         </Grid>
-        <Grid item container justify="center">
+        <Grid item container justify="space-evenly">
           <Grid item>
             <Button
               href="mailto:thomas7pilar@gmail.com"
@@ -65,6 +65,15 @@ export const HomePage: FunctionComponent = () => {
               startIcon={<Email />}
             >
               thomas7pilar@gmail.com
+            </Button>
+          </Grid>
+          <Grid item>
+            <Button
+              href={`${process.env.PUBLIC_URL}/tomaspilar.pubkey.asc`}
+              color="primary"
+              startIcon={<Lock />}
+            >
+              PGP key
             </Button>
           </Grid>
         </Grid>
