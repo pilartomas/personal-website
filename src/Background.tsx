@@ -31,7 +31,7 @@ export const Background: FunctionComponent = () => {
             bubble: {
               distance: 400,
               duration: 2,
-              opacity: 0.8,
+              opacity: 1,
               size: 40,
             },
             push: {
@@ -51,7 +51,7 @@ export const Background: FunctionComponent = () => {
             color: primary.main,
             distance: 150,
             enable: true,
-            opacity: 0.5,
+            opacity: 1,
             width: 1,
           },
           collisions: {
@@ -73,7 +73,7 @@ export const Background: FunctionComponent = () => {
             value: 80,
           },
           opacity: {
-            value: 0.5,
+            value: 1,
           },
           shape: {
             type: "circle",

@@ -6,18 +6,17 @@ import { IntlProvider } from "react-intl";
 import { HomePage } from "./HomePage";
 import { Background } from "./Background";
 
+const BLACK = "#000000";
+
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#53b5ce",
+      main: BLACK,
     },
     secondary: {
-      main: "#fe9c00",
+      main: BLACK,
     },
-    background: {
-      default: "#000000",
-      paper: "#000000",
-    },
+    tonalOffset: 0,
   },
 });
 
