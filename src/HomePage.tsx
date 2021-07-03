@@ -6,6 +6,7 @@ import {
   Button,
   Grid,
   Container,
+  Fab,
 } from "@material-ui/core";
 import { GitHub, LinkedIn, Email, Lock } from "@material-ui/icons";
 
@@ -39,7 +40,7 @@ export const HomePage: FunctionComponent = () => {
             Software Developer
           </Typography>
         </Grid>
-        <Grid item container justify="space-evenly">
+        <Grid item container justify="space-evenly" alignItems="center">
           <Grid item>
             <Link
               href="https://github.com/pilartomas"
@@ -48,6 +49,15 @@ export const HomePage: FunctionComponent = () => {
             >
               <GitHub fontSize="large" />
             </Link>
+          </Grid>
+          <Grid item>
+            <Fab
+              href={`${process.env.PUBLIC_URL}/cv_tomas_pilar.pdf`}
+              color="primary"
+              variant="extended"
+            >
+              Curriculum Vitae
+            </Fab>
           </Grid>
           <Grid item>
             <Link
