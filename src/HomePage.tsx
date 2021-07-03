@@ -19,6 +19,8 @@ const useStyles = makeStyles((theme) => ({
     borderWidth: 4,
     borderRadius: 16,
     borderColor: theme.palette.secondary.main,
+
+    backgroundColor: theme.palette.background.default,
   },
 }));
 
