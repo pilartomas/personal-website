@@ -1,5 +1,5 @@
 {
-  "bucketName": "personalwebsite-hostingbucket",
+  "bucketName": "personalwebsite-20210706194206-hostingbucket",
   "cnames": "pilartomas.com,*.pilartomas.com",
   "certificate": "arn:aws:acm:us-east-1:578076929662:certificate/e70ba6a6-2418-4478-9352-d0c6a91d7721"
 }
